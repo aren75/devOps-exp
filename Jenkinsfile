@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/yourusername/next-app.git'
+                git 'https://github.com/aren75/devOps-exp'
             }
         }
 
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Push to Docker Hub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', usernameVariable: 'arendias', passwordVariable: 'Deadstroke2004754')]) {
                     sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
                     sh 'docker push $DOCKER_IMAGE'
                 }
