@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/aren75/devOps-exp'
+            git branch: 'main', url: 'https://github.com/aren75/devOps-exp'
             }
         }
 
